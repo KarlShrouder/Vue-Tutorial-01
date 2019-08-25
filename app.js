@@ -13,7 +13,9 @@ new Vue({
       this.age -= dec;
     },
     updateXY: function(event) {
-      console.log(event);
+      this.x = event.offsetX;
+      this.y = event.offsetY;
+      //console.log(event);
     }
   }
 });
