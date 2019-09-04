@@ -8,28 +8,19 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>Looping Through Lists</h1>
+      <!-- Bag Image -->
+      <div id="bag" v-bind:class="{ burst: ended }"></div>
 
-      <ul>
-        <li v-for="c in characters">{{ c }}</li>
-      </ul>
+      <!-- Health Bar -->
+      <div id="bag-health">
+        <div v-bind:style="{ width: health + '%' }"></div>
+      </div>
 
-      <ul>
-        <li v-for="(n, index) in ninjas">
-          {{ index + 1 }}. {{ n.name }} - {{ n.age }}
-        </li>
-      </ul>
-
-      <template v-for="(n, index) in ninjas">
-        <h3>{{ index + 1 }}. {{ n.name }}</h3>
-        <p>{{ n.age }}</p>
-      </template>
-
-      <template v-for="n in ninjas">
-        <div v-for="(val,key) in n">
-          <p>{{ key }} - {{ val }}</p>
-        </div>
-      </template>
+      <!-- Controls -->
+      <div id="controls">
+        <button v-on:click="punch" v-show="!ended">Punch</button>
+        <button v-on:click="restart">Restart</button>
+      </div>
     </div>
 
     <script src="app.js"></script>
