@@ -7,16 +7,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <h1>Components</h1>
+    <div id="vue-app">
+      <h2>Refs</h2>
 
-    <div id="vue-app-one">
-      <h2>Vue App One</h2>
-      <greeting></greeting>
-    </div>
+      <input type="text" ref="input" />
+      <button v-on:click="readRefs">Submit</button>
+      <p>Secret Message: {{ output }}</p>
 
-    <div id="vue-app-two">
-      <h2>Vue App Two</h2>
-      <greeting></greeting>
+      <div ref="test">Hello</div>
     </div>
 
     <script src="app.js"></script>
